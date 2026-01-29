@@ -140,6 +140,23 @@
     .magic-bento-card {
         width: 100%;
         min-height: 180px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .magic-bento-card__title {
+        text-align: center;
+        width: 100%;
+    }
+
+    .magic-bento-card__description {
+        text-align: center;
+        width: 100%;
+    }
+
+    .magic-bento-card__header {
+        width: 100%;
+        justify-content: center;
     }
 }
 
