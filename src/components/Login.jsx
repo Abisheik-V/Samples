@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import Iridescence from './Iridescence';
+import DarkVeil from './DarkVeil';
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import '../assets/style/style.css';
@@ -66,12 +67,8 @@ const Login = () => {
 
     return (
         <div className="login-page" ref={containerRef}>
-            <Iridescence
-                color={[0.1, 0.5, 1.0]} // Brand Blue-ish
-                mouseReact={true}
-                amplitude={0.1}
-                speed={1.0}
-            />
+            <DarkVeil />
+
 
             <div className="form-card" ref={cardRef}>
                 <div className="form-header">

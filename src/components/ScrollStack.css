@@ -1,0 +1,77 @@
+.scroll-stack-scroller {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: visible;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: scroll-position;
+}
+
+.scroll-stack-inner {
+    padding: 20vh 5rem 10rem;
+    min-height: 100vh;
+}
+
+.scroll-stack-card-wrapper {
+    position: relative;
+}
+
+.scroll-stack-card {
+    transform-origin: top center;
+    will-change: transform, filter;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    height: 20rem;
+    width: 100%;
+    margin: 30px 0;
+    padding: 3rem;
+    border-radius: 40px;
+    box-sizing: border-box;
+    /* Improve mobile performance */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    background-color: #222;
+    /* Default background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.scroll-stack-card h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+}
+
+.scroll-stack-card p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+.card-demo-1 {
+    background: linear-gradient(135deg, hsl(240, 39%, 15%) 0%, hsl(249, 70%, 18%) 100%);
+}
+
+.card-demo-2 {
+    background: linear-gradient(135deg, hsl(16, 100%, 22%) 0%, hsl(16, 100%, 22%) 100%);
+}
+
+.card-demo-3 {
+    background: linear-gradient(135deg, hsl(171, 100%, 22%) 0%, hsl(171, 100%, 22%) 100%);
+}
+
+.scroll-stack-end {
+    width: 100%;
+    height: 1px;
+}

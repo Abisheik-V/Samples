@@ -10,8 +10,9 @@ body {
 
 .main-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     padding-top: 50px;
     min-height: 100vh;
     /* Removed old gradient background */

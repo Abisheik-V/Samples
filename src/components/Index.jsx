@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 import '../assets/style/style.css';
 import logo from '../assets/logo.png';
 import { X, ArrowUpRight, List, Person } from 'react-bootstrap-icons';
-import Iridescence from './Iridescence';
+import DarkVeil from './DarkVeil';
+import ScrollStack, { ScrollStackItem } from './ScrollStack';
+import MagicBento from './MagicBento';
+import ContactForm from './ContactForm';
+
 
 const Index = () => {
     const containerRef = useRef();
@@ -83,12 +87,8 @@ const Index = () => {
 
     return (
         <div ref={containerRef} className="main-container">
-            <Iridescence
-                color={[0.1, 0.5, 1.0]} // Brand Blue-ish
-                mouseReact={true}
-                amplitude={0.1}
-                speed={1.0}
-            />
+            <DarkVeil />
+
             <div className="navbar-card">
                 {/* Header Section */}
                 <div className="navbar-header">
@@ -139,6 +139,42 @@ const Index = () => {
                 </div>
             </div>
 
+            <ScrollStack
+                useWindowScroll={true}
+                itemStackDistance={50}
+                itemScale={0.05}
+                baseScale={0.88}
+                scaleEndPosition="50%"
+            >
+                <ScrollStackItem itemClassName="card-demo-1">
+                    <h2>About Artlysoft</h2>
+                    <p>We are a premier software development company transforming ideas into innovative digital solutions. Partner with us for high-quality, scalable, and user-centric software.</p>
+                </ScrollStackItem>
+                <ScrollStackItem itemClassName="card-demo-2">
+                    <h2>Our Services</h2>
+                    <p>We specialize in Web Development, Mobile App Creation, UI/UX Design, and Custom Software Solutions tailored to meet your unique business needs.</p>
+                </ScrollStackItem>
+                <ScrollStackItem itemClassName="card-demo-3">
+                    <h2>Our Mission</h2>
+                    <p>To empower businesses through digital excellence. We prioritize robust testing, high coding standards, and long-term client partnerships to drive your success.</p>
+                </ScrollStackItem>
+            </ScrollStack>
+
+            <MagicBento
+                textAutoHide={true}
+                enableStars
+                enableSpotlight
+                enableBorderGlow={true}
+                enableTilt={false}
+                enableMagnetism={false}
+                clickEffect
+                spotlightRadius={400}
+                particleCount={12}
+                glowColor="132, 0, 255"
+                disableAnimations={false}
+            />
+
+            <ContactForm />
 
         </div>
     );
