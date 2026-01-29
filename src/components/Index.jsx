@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
@@ -15,6 +15,14 @@ const Index = () => {
     const containerRef = useRef();
     const [isExpanded, setIsExpanded] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const toggleNavbar = () => {
         if (isAnimating) return;
@@ -47,7 +55,8 @@ const Index = () => {
             });
 
             gsap.to(".navbar-card", {
-                width: Math.min(1000, window.innerWidth * 0.95), // Expanded width: max 1000px or 95% of viewport
+                width: "95%",
+                maxWidth: 1000,
                 duration: 0.8,
                 ease: "elastic.out(1,0.75)"
             });
@@ -74,7 +83,8 @@ const Index = () => {
             });
 
             gsap.to(".navbar-card", {
-                width: Math.min(600, window.innerWidth * 0.9), // Collapsed width: max 600px or 90% of viewport
+                width: "90%",
+                maxWidth: 600,
                 duration: 0.8,
                 ease: "elastic.out(1,0.8)",
                 onComplete: () => setIsAnimating(false)
@@ -141,7 +151,7 @@ const Index = () => {
 
             <ScrollStack
                 useWindowScroll={true}
-                itemStackDistance={50}
+                itemStackDistance={isMobile ? 25 : 50}
                 itemScale={0.05}
                 baseScale={0.88}
                 scaleEndPosition="50%"

@@ -216,19 +216,23 @@ body {
     }
 
     .navbar-header {
-        flex-wrap: wrap;
-        /* Allow wrapping if content is too tight */
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
         gap: 10px;
     }
 
     .brand-logo span {
-        font-size: 1rem;
+        font-size: 0.9rem;
         /* Smaller font for brand */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .cta-btn {
         padding: 8px 16px;
         font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     .nav-item {
@@ -244,13 +248,20 @@ body {
     }
 }
 
-/* Landscape Mobile / Wide Phones (max-width: 600px) */
-@media (max-width: 600px) {
+/* Very Small Mobile / Fold (max-width: 360px) */
+@media (max-width: 360px) {
     .brand-logo span {
-        display: block;
-        /* Ensure it stays visible */
+        display: none;
     }
 
+    .cta-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Landscape Mobile / Wide Phones (max-width: 600px) */
+@media (max-width: 600px) {
     .nav-actions {
         gap: 8px;
         /* Tighter gap */
