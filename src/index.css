@@ -32,8 +32,21 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2.5rem, 5vw + 1rem, 3.2em);
   line-height: 1.1;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-container {
+    padding-top: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: hidden;
+  }
 }
 
 button {
